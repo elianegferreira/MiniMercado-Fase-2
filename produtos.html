@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMercado</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            padding-top: 20px;
+        }
+        .alert-promocao {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1050;
+        }
+
+        .carousel-inner img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .logo {
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .nav-btn {
+            transition: transform 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.6rem 1.2rem;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="mb-4">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+
+           <!--logo + título--> 
+           <div class="d-flex align-items-center">
+            <img src="img/logo.png" alt="Logo MiniMercado" class="logo me-3">
+            <h1 class= "m-0 fw-bold" style="font-size: 3.5rem; color: green;">MiniMercado </h1>
+        </div>
+
+           <!--navegação-->  
+        <nav class="d-flex gap-3 mt-3 mt-md-0">
+            <a href="index.html" class="btn btn-outline-success nav-btn">Início</a> 
+            <a href="servicos.html" class="btn btn-outline-success nav-btn">Serviços</a> 
+            <a href="cadastro.html" class="btn btn-outline-success nav-btn">Cadastre-se</a>
+        </nav>
+    </header>
+
+    <!-- Carrossel Bootstrap -->
+    <div id="carouselBanners" class="carousel slide mb-4" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/banner1.png" class="d-block w-100" alt="Corredor de compras do MiniMercado">
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner2.png" class="d-block w-100" alt="Sessão de legumes ">
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner3.png" class="d-block w-100" alt="Sessão de açougue com carnes e peixes">
+            </div>
+            <div class="carousel-item">
+                <img src="img/banner4.png" class="d-block w-100" alt="Sessão da padaria">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanners" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBanners" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <h1 class="text-success fw-bold text-center mb-4">Produtos</h1>
+
+        <!-- Menu interno -->
+        <nav class="d-flex justify-content-center gap-3 mb-4">
+            <a href="#frutas" class="btn btn-outline-success nav-btn">Frutas e Verduras</a> 
+            <a href="#alimentos" class="btn btn-outline-success nav-btn">Alimentos não Perecíveis</a> 
+            <a href="#higiene" class="btn btn-outline-success nav-btn">Higiene e Limpeza</a> 
+        </nav>    
+
+        <!-- Frutas e Verduras -->
+        <section id="frutas" class="mb-5">
+            <h2 class="text-success fw-bold">Frutas e Verduras</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/banana.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Banana Nanica">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Banana Nanica</h5>
+                              <p class="card-text text-success">R$ <span class="preco">5.00</span></p> 
+                              <small class="text-muted">kg</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/alface.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Alface Crespa">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Alface Crespa </h5>
+                              <p class="card-text text-success">R$ <span class="preco">3.00</span></p> 
+                              <small class="text-muted">Unidade</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                      <img src="img/cenoura.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Cenoura">
+                      <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                          <h5 class="card-title">Cenoura</h5>
+                          <p class="card-text text-success">R$ <span class="preco">3.00</span></p>
+                          <small class="text-muted">Kg</small>
+                        </div>
+                        <div class="mt-3">
+                          <label class="form-label">Quantidade:</label>
+                          <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                          <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
+            </div>
+        </section>
+
+        <!-- Alimentos -->
+        <section id="alimentos" class="mb-5">
+            <h2 class="text-success fw-bold">Alimentos não Perecíveis</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/arroz.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Arroz Branco Camil 5kg">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Arroz Branco Camil</h5>
+                              <p class="card-text text-success">R$ <span class="preco">30.00</span></p> 
+                              <small class="text-muted">5kg</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/feijao_preto.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Feijão Preto Kicaldo 1kg">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Feijão Preto Kicaldo </h5>
+                              <p class="card-text text-success">R$ <span class="preco">8.00</span></p> 
+                              <small class="text-muted">1kg</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/azeite.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Azeite Gallo Virgem Delicado 750ml">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Azeite Gallo Virgem  </h5>
+                              <p class="card-text text-success">R$ <span class="preco">48.00</span></p> 
+                              <small class="text-muted">750ml</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Higiene -->
+        <section id="higiene" class="mb-5">
+            <h2 class="text-success fw-bold">Higiene e Limpeza</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/sabonete.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Sabonete Dove">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Sabonete Dove 90gr</h5>
+                              <p class="card-text text-success">R$ <span class="preco">3.00</span></p> 
+                              <small class="text-muted">Unidade</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/detergente.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Detergente Ypê Neutro">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Detergente Ypê Neutro</h5>
+                              <p class="card-text text-success">R$ <span class="preco">4.00</span></p> 
+                              <small class="text-muted">Unidade</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="img/sabao.png" class="card-img-top mx-auto d-block mt-3" style="width: 70%; height: auto;" alt="Sabão em Pó Tixan Ypê 800gr">
+                        <div class="card-body d-flex flex-column justify-content-between">
+                            <div>
+                              <h5 class="card-title">Sabão em Pó Tixan Ypê</h5>
+                              <p class="card-text text-success">R$ <span class="preco">18.00</span></p> 
+                              <small class="text-muted">800gr</small>
+                            </div>
+                            <div class="mt-3">
+                              <label class="form-label">Quantidade:</label>
+                              <input type="number" class="form-control mb-2 quantidade" min="1" value="1">
+                              <button class="btn btn-success w-100 adicionar">Adicionar ao Carrinho</button>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Adicione o bloco total -->
+    <div class="container mt-5">
+        <h4 class="text-success">🛒 Lista de Compras</h4>
+        <ul id="lista-compras" class="list-group mb-3"></ul>
+        <h5 class="text-end text-success">Total: R$ <span id="total-carrinho">0,00</span></h5>
+      </div>
+      
+
+      <!-- Adicione o JavaScript -->
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          let total = 0;
+          const totalCarrinho = document.getElementById('total-carrinho');
+          const lista = document.getElementById('lista-compras');
+      
+          function atualizarTotal() {
+            let novoTotal = 0;
+            lista.querySelectorAll('li').forEach(item => {
+              const valor = parseFloat(item.getAttribute('data-subtotal'));
+              novoTotal += valor;
+            });
+            totalCarrinho.textContent = novoTotal.toFixed(2).replace('.', ',');
+          }
+      
+          function criarItem(nome, quantidade, subtotal) {
+            const item = document.createElement('li');
+            item.className = 'list-group-item d-flex justify-content-between align-items-center';
+            item.setAttribute('data-nome', nome);
+            item.setAttribute('data-subtotal', subtotal);
+      
+            item.innerHTML = `
+              <div>
+                <strong>${nome}</strong><br>
+                Quantidade: ${quantidade} | Subtotal: R$ ${subtotal.toFixed(2).replace('.', ',')}
+              </div>
+              <button class="btn btn-sm btn-danger remover">Remover</button>
+            `;
+      
+            // Evento de remover item
+            item.querySelector('.remover').addEventListener('click', () => {
+              item.remove();
+              atualizarTotal();
+            });
+      
+            lista.appendChild(item);
+          }
+      
+          document.querySelectorAll('.adicionar').forEach(btn => {
+            btn.addEventListener('click', function () {
+              const card = this.closest('.card-body');
+              const nome = card.querySelector('.card-title').textContent;
+              const preco = parseFloat(card.querySelector('.preco').textContent.replace(',', '.'));
+              const quantidade = parseInt(card.querySelector('.quantidade').value);
+              const subtotal = preco * quantidade;
+      
+              // Verifica se já existe na lista (atualiza se sim)
+              let itemExistente = Array.from(lista.children).find(el => el.getAttribute('data-nome') === nome);
+              if (itemExistente) itemExistente.remove();
+      
+              criarItem(nome, quantidade, subtotal);
+              atualizarTotal();
+      
+              // Animação temporária do botão
+              const originalText = this.textContent;
+              const botao = this;
+              botao.textContent = "Adicionado!";
+              botao.classList.remove('btn-success');
+              botao.classList.add('btn-outline-secondary');
+      
+              setTimeout(() => {
+                botao.textContent = originalText;
+                botao.classList.remove('btn-outline-secondary');
+                botao.classList.add('btn-success');
+              }, 3000);
+            });
+          });
+        });
+      </script>
+      
+
+   <!-- Alerta temporizado -->
+   <div class="alert alert-success alert-promocao" role="alert" id="promoAlert">
+    ✨ Aproveite nossas promoções do dia!
+</div>
+
+<!-- Rodapé -->
+<footer class="bg-success-subtle text-dark text-center text-lg-start mt-5 pt-4 pb-3 border-top">
+    <div class="container">
+  
+      <div class="row text-start">
+        <!-- Categorias -->
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold"><i class="bi bi-grid"></i> Categorias</h5>
+          <ul class="list-unstyled">
+            <li><a href="produtos.html" class="text-dark text-decoration-none">Produtos</a></li>
+            <li><a href="servicos.html" class="text-dark text-decoration-none">Serviços</a></li>
+            <li><a href="cadastro.html" class="text-dark text-decoration-none">Cadastre-se</a></li>
+          </ul>
+        </div>
+  
+        <!-- Atendimento -->
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold"><i class="bi bi-headset"></i> Atendimento</h5>
+          <p class="mb-1">Telefone: (11) 1234-5678</p>
+          <p>Email: contato@minimercado.com</p>
+        </div>
+  
+        <!-- Documentos -->
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold"><i class="bi bi-file-earmark-text"></i> Informações</h5>
+          <p class="mb-1">
+            <a href="politica_privacidade.pdf" download class="text-dark text-decoration-none">Política de Privacidade</a>
+          </p>
+          <p>
+            <a href="termos_uso.pdf" download class="text-dark text-decoration-none">Termos de Uso</a>
+          </p>
+        </div>
+      </div>
+  
+      <hr>
+      <p class="text-center m-0">&copy; 2025 MiniMercado. Todos os direitos reservados.<br>
+        <small><strong>Site desenvolvido por Equipe MiniMercado Online</strong></small>
+      </p>
+    </div>
+  </footer>
+  
+
+<!-- Bootstrap JS + JavaScript personalizado -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Mostrar alerta de promoção após 3 segundos
+    window.onload = () => {
+        setTimeout(() => {
+            const alert = document.getElementById("promoAlert");
+            alert.style.display = "block";
+            setTimeout(() => alert.style.display = "none", 4000);
+        }, 3000);
+    };
+</script>
+</body>
+</html>
+
+
+      
+      
+      
